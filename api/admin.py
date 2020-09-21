@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Pool, Question, AnswerOption, UserAnswer
+from .models import Pool, Question, AnswerOption
 
 @admin.register(Pool)
 class PoolAdmin(admin.ModelAdmin):
@@ -18,8 +18,3 @@ class QuestionAdmin(admin.ModelAdmin):
 class AnswerOptionAdmin(admin.ModelAdmin):
     list_display = ['text', 'question']
     search_fields = ['text', 'question']
-
-
-@admin.register(UserAnswer)
-class UserAnswerAdmin(admin.ModelAdmin):
-    list_display = ['question', 'user', 'text']
